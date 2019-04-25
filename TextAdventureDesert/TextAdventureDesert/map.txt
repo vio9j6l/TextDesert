@@ -1,0 +1,5 @@
+	EmptyCavePath	EmptyCavePath	LeaveCaveRoom
+		PolarBearRoom	EmptyCavePath	GiantSpiderRoom
+		EmptyCavePath	BrownBearRoom	FindGloveRoom
+		GiantScarabRoom	EmptyCavePath	GiantScorpionRoom
+GiantSpiderRoom	EmptyCavePath	StartingRoom	EmptyCavePath	FindDaggerRoom
