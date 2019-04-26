@@ -52,6 +52,22 @@ class Rope(Item):
                          value=self.amt)
 
 
+class Card(Item):
+    def __init__(self, amt):
+        self.amt = amt  # attribute of the HealthPotion class
+        super().__init__(name="Card",
+                         description="A card with a letter 'S' carved on the front".format(str(self.amt)),
+                         value=self.amt)
+
+
+class Diary(Item):
+    def __init__(self, amt):
+        self.amt = amt  # attribute of the HealthPotion class
+        super().__init__(name="Diary",
+                         description="It is a diary with a name of 'NK'".format(str(self.amt)),
+                         value=self.amt)
+
+
 class Weapon(Item):
     def __init__(self, name, description, value, damage):
         self.damage = damage

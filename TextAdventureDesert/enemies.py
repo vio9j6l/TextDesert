@@ -35,7 +35,7 @@ class PolarBear(Enemy):
 
 class BrownBear(Enemy):
     def __init__(self):
-        super().__init__(name="Brown bear", hp=80, damage=20)
+        super().__init__(name="Brown bear", hp=20, damage=10)
 
 
 class Scorpion(Enemy):
@@ -50,4 +50,4 @@ class GiantCat(Enemy):
 
 class Fog(Enemy):
     def __init__(self):
-        super().__init__(name="Fog", hp=10, damage=100)
+        super().__init__(name="Fog", hp=10, damage=90)

@@ -99,14 +99,16 @@ class HealthRoom(MapTile):  # Super to PotionRoom, ... maybe fountain room
 
 
 class ERoom(MapTile):
-    def __init__(self, x, y, enemy):
+    def __init__(self, x, y, enemy, item):
         self.enemy = enemy
+        self.item = item
         super().__init__(x, y)
 
     def modify_player(self, the_player):
         if self.enemy.is_alive():
             the_player.hp = the_player.hp - self.enemy.damage
             print("Enemy does {} damage. You have {} HP remaining.".format(self.enemy.damage, the_player.hp))
+            the_player.inventory.append(self.item)
 
     def available_actions(self):
         if self.enemy.is_alive():
@@ -143,7 +145,7 @@ class GiantSpiderRoom(EnemyRoom):
 
 class BrownBearRoom(ERoom):
     def __init__(self, x, y):
-        super().__init__(x, y, enemies.BrownBear())
+        super().__init__(x, y, enemies.BrownBear(), items.Diary(1))
 
     def intro_text(self):
         if self.enemy.is_alive():
@@ -158,7 +160,7 @@ class BrownBearRoom(ERoom):
 
 class PolarBearRoom(ERoom):
     def __init__(self, x, y):
-        super().__init__(x, y, enemies.PolarBear())
+        super().__init__(x, y, enemies.PolarBear(), items.Card(1))
 
     def intro_text(self):
         if self.enemy.is_alive():
@@ -208,11 +210,14 @@ class FogRoom(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            Suddenly, you can't see anything. Everything are cover by fog.
+            You Slowly open the door, and what you see is a woman!
+            "Kris" 
+            The woman disappear in the fog, you try to stop her, but she is dissolved!
+            "Who is Kris?"
             """
         else:
             return """
-            You died!
+            You died! The last thing you remember is the space is filled with fog.
             """
 
 
@@ -235,6 +240,23 @@ class FindGloveRoom(LootRoom):
         return """
         Your notice something shiny in a pile of bloods on the Table.
         It's a pair of red boxing gloves! You pick it up and try it on.
+        """
+
+
+class RingRoom(LootRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, items.Dagger())
+
+    def intro_text(self):
+        return """
+        Once you entered the room, you hear something drop on the ground.
+        You looked down, it is a silver ring slowly scrolled toward you.
+        You picked it up, and you saw your name 'NK' next to 'EK' inside of the ring.
+        A picture of a slender woman lay in a pile of bloods with a empty hole in her chest.
+        "Eleanor Kaur!" 
+        "DO I know this woman? is she my friend or MY WIFE!"
+        You tried very hard to see that woman's face, but you noticed something strange 
+        "WHERE IS HER HEART!!!"
         """
 
 

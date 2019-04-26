@@ -1,6 +1,7 @@
 import world
 from player import Player
 
+
 def play():
     world.load_tiles()
     player = Player()

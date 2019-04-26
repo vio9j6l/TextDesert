@@ -1,5 +1,8 @@
-	AmberRoom	EmptyCavePath	LeaveCaveRoom
-		PolarBearRoom	EmptyCavePath	GiantSpiderRoom
-		EmptyCavePath	BrownBearRoom	FindGloveRoom
-		GiantScarabRoom	EmptyCavePath	GiantScorpionRoom
-GiantSpiderRoom	CrystalRoom	StartingRoom	EmptyCavePath	FindDaggerRoom
+|AmberRoom|EmptyCavePath|LeaveCaveRoom|
+||PolarBearRoom|EmptyCavePath|GiantSpiderRoom
+||EmptyCavePath|BrownBearRoom|FindGloveRoom
+EmptyCavePath|GiantScarabRoom|EmptyCavePath|BrownBearRoom|
+GiantSpiderRoom|CrystalRoom|StartingRoom|EmptyCavePath|FindDaggerRoom
+|PolarBearRoom|GiantScarabRoom|EmptyCavePath|GiantScorpionRoom
+||AmberRoom|EmptyCavePath|RingRoom
+||GiantSpiderRoom|BrownBearRoom|
