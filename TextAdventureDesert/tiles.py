@@ -38,6 +38,8 @@ class StartingRoom(MapTile):
     def intro_text(self):
         return """
         You find yourself in a cave with a flickering torch on the wall.
+        You remember nothing! Suddenly, you noticed there is a letter of 'N' on you right hand palm.
+        You turned back, and you saw four stones next to one path.
         You can make out four paths, each equally as dark and foreboding.
         """
  
